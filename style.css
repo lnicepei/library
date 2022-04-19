@@ -1,0 +1,11 @@
+.input-field{
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    top: 30vh;
+    left: 45vw;
+    height: 40vh;
+    width: 10vw;
+    background: red;
+}
