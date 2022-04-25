@@ -1,11 +1,35 @@
 .input-field{
     display: none;
-    align-items: flex-start;
-    justify-content: flex-end;
     position: absolute;
     top: 30vh;
     left: 45vw;
-    height: 40vh;
-    width: 10vw;
+    /* height: 40vh;
+    width: 10vw; */
     background: red;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container button{
+    background-color: #f1f1f1;
+    border: none;
+}
+
+.book{
+    background-color: red;
 }
