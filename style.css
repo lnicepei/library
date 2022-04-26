@@ -31,5 +31,9 @@
 }
 
 .book{
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
     background-color: red;
 }
