@@ -1,13 +1,14 @@
-function Book(name, author, ifread){
+function Book(name, author, pageNumber, ifWasRead){
     this.name = name;
     this.author = author;
-    this.ifread = ifread;
+    this.pageNumber = pageNumber;
+    this.ifWasRead = ifWasRead;
 }
 let myLibrary = [];
 
 document.querySelector(".add-button").addEventListener("click", displayInputField);
 document.querySelector(".remove-button").addEventListener("click", removeInputField);
-document.querySelector(".submit-button").addEventListener("click", addBookToLibrary);
+// document.querySelector(".submit-button").addEventListener("click", addBookToLibrary);
 
 function addBookToLibrary(e){
     //do stuff here
@@ -16,8 +17,16 @@ function addBookToLibrary(e){
     for(let book in myLibrary){
         let newBook = document.createElement("div");
         newBook.className = "book";
+        newBook.textContent = myLibrary[book].author + myLibrary[book].pageNumber + myLibrary[book].ifWasRead;  
+        // let name = newBook.createElement("div");
+        // let author = newBook.createElement("div");
+        // let pageNumber = newBook.createElement("div");
+        // let ifread = newBook.createElement("div");
         document.querySelector(".book-container").appendChild(newBook);
-        newBook.textContent += myLibrary[book].name + " " + myLibrary[book].author + " " + myLibrary[book].ifread;
+        // document.querySelector(".book").appendChild("sdfsdg");
+        // author.appendChild(myLibrary[book].author);
+        // pageNumber.appendChild(myLibrary[book].pageNumber);
+        // ifWasRead.appendChild(myLibrary[book].pageNumber);
     }
     removeInputField();
 }
@@ -25,8 +34,10 @@ function addBookToLibrary(e){
 function getDataFromForm(){
     let name = document.getElementById("bookname").value;
     let author = document.getElementById("author").value;
-    let ifread = document.getElementById("ifread").checked;
-    const newBook = new Book(name, author, ifread);
+    let pageNumber = document.getElementById("pages").value;
+    let ifWasRead = document.getElementById("ifWasRead").checked;
+    const newBook = new Book(name, author, pageNumber, ifWasRead);
+    if(name !== "" && author !== "" && isNaN(pageNumber) == false)
     myLibrary.push(newBook);
 }
 
