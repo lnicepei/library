@@ -89,6 +89,7 @@ function pushDataFromForm(){
 }
 
 function displayInputField(){
+    document.querySelector(".add-button").classList.toggle("rotate");
     document.getElementById("myForm").style.display == "" ? document.getElementById("myForm").style.display = "block" : removeInputField();
 }
 
