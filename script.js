@@ -4,14 +4,14 @@ function Book(name, author, pageNumber, ifWasRead){
     this.pageNumber = pageNumber;
     this.ifWasRead = ifWasRead;
 }
+
 let myLibrary = [];
 
 document.querySelector(".add-button").addEventListener("click", displayInputField);
-document.querySelector(".remove-button").addEventListener("click", removeInputField);
+// document.querySelector(".remove-button").addEventListener("click", removeInputField);
 document.querySelector("form").addEventListener("submit", addBookToLibrary);
 
 function addBookToLibrary(e){
-    
     e.preventDefault();
     pushDataFromForm();
     
@@ -41,32 +41,43 @@ function updateBooks(){
         pageNumber.className = "pageNumber";
         
         let ifWasRead = document.createElement("div");
-        ifWasRead.textContent = myLibrary[book].ifWasRead;
+        myLibrary[book].ifWasRead == true ? ifWasRead.textContent = "Read" : ifWasRead.textContent = "Unread"; 
         ifWasRead.className = "ifWasRead";
         
         let removeButton = document.createElement("button");
         removeButton.textContent = "Delete";
+        
         removeButton.addEventListener("click", () => {
-            
             if (book > -1) {
-                myLibrary.splice(book, 1); // 2nd parameter means remove one item only
+                myLibrary.splice(book, 1);
             }
 
             updateBooks();
         });
+
+        let readButton = document.createElement("button");
+        
+        myLibrary[book].ifWasRead == false ? readButton.textContent = "Unread" : readButton.textContent = "Read";
+        
+        readButton.addEventListener("click", () => {
+            if(readButton.textContent == "Unread"){
+                readButton.textContent = "Read";
+            }else{
+                readButton.textContent = "Unread";
+            }
+        })
 
         document.querySelector(".book-container").appendChild(newBook);
         
         newBook.appendChild(name);
         newBook.appendChild(author);
         newBook.appendChild(pageNumber);
-        newBook.appendChild(ifWasRead);
         newBook.appendChild(removeButton);
+        newBook.appendChild(readButton);
     }
 }
 
 function pushDataFromForm(){
-    let id = 0;
     let name = document.getElementById("bookname").value;
     let author = document.getElementById("author").value;
     let pageNumber = document.getElementById("pages").value;
@@ -78,26 +89,13 @@ function pushDataFromForm(){
 }
 
 function displayInputField(){
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("myForm").style.display == "" ? document.getElementById("myForm").style.display = "block" : removeInputField();
 }
 
 function removeInputField(){
-    document.getElementById("myForm").style.display = "none";
-
+    document.getElementById("myForm").style.display = "";
     document.getElementById("bookname").value = "";
     document.getElementById("author").value = "";
     document.getElementById("pages").value = "";
     document.getElementById("ifWasRead").checked = "";
-}
-
-function removeBook(book){
-    for (const exampleBook in myLibrary) {
-        if(exampleBook == book){
-            const index = myLibrary.indexOf(5);
-            if (index > -1) {
-                myLibrary.splice(index, 1); // 2nd parameter means remove one item only
-            }
-        }
-    }
-    console.log(book);
 }
