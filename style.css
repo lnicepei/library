@@ -32,13 +32,12 @@ header{
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    transform: rotate(90deg);
-    transition: transform 0.5s;
+    /* transform: rotate(90deg); */
+    transition: transform 0.5s; 
 }
 
-.add-button:active{
-    transform: rotate(-90deg);
-  transition:  0s;
+.rotate{
+    transform: rotate(45deg);
 }
 
 .form-container {
