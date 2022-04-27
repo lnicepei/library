@@ -1,20 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .input-field{
     display: none;
     position: absolute;
-    top: 30vh;
-    left: 45vw;
-    /* height: 40vh;
-    width: 10vw; */
-    background: red;
+    top: calc(50% - calc(421.8px / 2));
+    left: calc(50% - calc(313px / 2));
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background: black;
+    position: fixed;
+    top: 0;
+}
+
+.add-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: 40px;
+    background-color: red;
+    border: 10px solid white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+.add-button:active{
+    transform: rotate(-90deg);
+  transition:  0s;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
+    /* max-width: 300px; */
+    padding: 40px;
+    border-radius: 40px;
+    background-color: yellow;
+    /* transition: 1s linear; */
 }
 
 .form-container input[type=text]{
@@ -26,13 +61,15 @@
 }
 
 .form-container button{
-    background-color: #f1f1f1;
+    background-color: black;
+    color: white;
     border: none;
 }
 
 .book-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin-top: 85px;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
 }
 
@@ -40,8 +77,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    margin: 3rem;
+    padding: 2rem;
+    margin: 1rem;
 }
 
 .name{
