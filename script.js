@@ -64,15 +64,17 @@ function updateBooks(){
         }
         
         readButton.addEventListener("click", () => {
-            if(readButton.textContent == "Unread"){
+            console.log(myLibrary[book].ifWasRead);
+            if(myLibrary[book].ifWasRead == false){
                 readButton.textContent = "Read";
-                readButton.style.background = "yellow";
+                readButton.style.background = "yellow"
+                myLibrary[book].ifWasRead = true;
             }else{
                 readButton.textContent = "Unread";
-                readButton.style.background = "red";
+                myLibrary[book].ifWasRead = false;
+                readButton.style.background = "red"
             }
         })
-
         document.querySelector(".book-container").appendChild(newBook);
         
         newBook.appendChild(name);
