@@ -173,7 +173,7 @@ header .h1{
         font-size: 1.4rem;
         width: 80%;
         /* height: 100vh; */
-        top: calc(50% - calc(421.8px / 2));
+        top: 10vh;
         left: 10%;
         transform: scale(0);
         transition: 0.1s linear;
