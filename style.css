@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+button{
+    border: none;
+}
+
 .input-field{
     display: none;
     position: absolute;
@@ -25,19 +29,19 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 10vh;
     font-size: 40px;
     background-color: red;
-    border: 10px solid white;
-    height: 50px;
-    width: 50px;
+    border: 5px solid white;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     /* transform: rotate(90deg); */
     transition: transform 0.5s; 
 }
 
 .rotate{
-    transform: rotate(225deg);
+    transform: rotate(225deg) scale(1.2);
 }
 
 .form-container {
@@ -80,8 +84,9 @@ header{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 2rem;
     margin: 1rem;
-}
-
-.name{
-    /* font-size: 30rem; */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+    0 2px 2px rgba(0,0,0,0.1), 
+    0 4px 4px rgba(0,0,0,0.1), 
+    0 8px 8px rgba(0,0,0,0.1),
+    0 16px 16px rgba(0,0,0,0.1);
 }
