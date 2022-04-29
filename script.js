@@ -17,9 +17,7 @@ function addBookToLibrary(e){
     
     updateBooks();
     
-    removeInputField();
-    console.log(myLibrary);
-    document.querySelector(".add-button").classList.toggle("rotate");
+    removeInputField(); 
 }
 
 function updateBooks(){
@@ -99,11 +97,17 @@ function pushDataFromForm(){
 
 function displayInputField(){
     document.querySelector(".add-button").classList.toggle("rotate");
-    document.getElementById("myForm").style.display == "" ? document.getElementById("myForm").style.display = "block" : removeInputField();
+    document.getElementById("myForm").style.transform = "scale(1)";
+    document.querySelector(".add-button").removeEventListener("click", displayInputField);
+    document.querySelector(".add-button").addEventListener("click", removeInputField);
 }
 
 function removeInputField(){
-    document.getElementById("myForm").style.display = "";
+    document.querySelector(".add-button").addEventListener("click", displayInputField);
+    document.querySelector(".add-button").removeEventListener("click", removeInputField);
+
+    document.querySelector(".add-button").classList.toggle("rotate");
+    document.getElementById("myForm").style.transform = "scale(0)";
     document.getElementById("bookname").value = "";
     document.getElementById("author").value = "";
     document.getElementById("pages").value = "";
