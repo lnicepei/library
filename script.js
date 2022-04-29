@@ -8,7 +8,6 @@ function Book(name, author, pageNumber, ifWasRead){
 let myLibrary = [];
 
 document.querySelector(".add-button").addEventListener("click", displayInputField);
-// document.querySelector(".remove-button").addEventListener("click", removeInputField);
 document.querySelector("form").addEventListener("submit", addBookToLibrary);
 
 function addBookToLibrary(e){
