@@ -70,8 +70,7 @@ header .h1{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    /* transform: rotate(90deg); */
-    transition: transform 0.5s; 
+    transition: 0.5s; 
 }
 
 .rotate{
@@ -87,7 +86,7 @@ header .h1{
     background: white;
 }
 
-.form-container input[type=text]{
+.form-container input[type=text], .form-container input[type=number]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -172,7 +171,6 @@ header .h1{
         position: fixed;
         font-size: 1.4rem;
         width: 80%;
-        /* height: 100vh; */
         top: 10vh;
         left: 10%;
         transform: scale(0);
