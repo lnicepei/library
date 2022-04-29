@@ -50,11 +50,9 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* max-width: 300px; */
     padding: 40px;
     border-radius: 40px;
     background-color: yellow;
-    /* transition: 1s linear; */
 }
 
 .form-container input[type=text]{
@@ -77,6 +75,15 @@ header{
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
 }
+
+@media only screen and (max-width: 600px) {
+    .book-container{
+        display: grid;
+        margin-top: 85px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+  }
 
 .book{
     display: flex;
