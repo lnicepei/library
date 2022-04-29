@@ -19,6 +19,7 @@ function addBookToLibrary(e){
     
     removeInputField();
     console.log(myLibrary);
+    document.querySelector(".add-button").classList.toggle("rotate");
 }
 
 function updateBooks(){
@@ -57,13 +58,21 @@ function updateBooks(){
 
         let readButton = document.createElement("button");
         
-        myLibrary[book].ifWasRead == false ? readButton.textContent = "Unread" : readButton.textContent = "Read";
+        if(myLibrary[book].ifWasRead == false){
+            readButton.textContent = "Unread";
+            readButton.style.background = "red"
+        }else{
+            readButton.textContent = "Read";
+            readButton.style.background = "yellow"
+        }
         
         readButton.addEventListener("click", () => {
             if(readButton.textContent == "Unread"){
                 readButton.textContent = "Read";
+                readButton.style.background = "yellow";
             }else{
                 readButton.textContent = "Unread";
+                readButton.style.background = "red";
             }
         })
 
