@@ -8,10 +8,12 @@ button{
 }
 
 .input-field{
-    display: none;
+    display: block;
     position: absolute;
     top: calc(50% - calc(421.8px / 2));
     left: calc(50% - calc(313px / 2));
+    transform: scale(0);
+    transition: 0.1s linear;
 }
 
 header{
