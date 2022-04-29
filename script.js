@@ -9,10 +9,12 @@ let myLibrary = [];
 
 document.querySelector(".add-button").addEventListener("click", displayInputField);
 document.querySelector("form").addEventListener("submit", addBookToLibrary);
-    
+
 function autoBooks(){
-    let Shakespeare = new Book("Romeo and Juliet", "William Shakespeare", 300, true);
+    let Shakespeare = new Book("Book: Romeo and Juliet", "By William Shakespeare", "Pages: 300", true);
+    let Tolstoy = new Book("Book: War and Peace", "By Lev Tolstoy", "Pages: 1225", false);
     myLibrary.push(Shakespeare);
+    myLibrary.push(Tolstoy);
 }
 
 function addBookToLibrary(e){
