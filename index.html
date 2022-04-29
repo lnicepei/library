@@ -9,6 +9,9 @@
 </head>
 <body>
     <header>
+        <div class="title">
+            <h1>Library</h1>
+        </div>
         <div class="add-button">
             <svg style="width:35px;height:35px" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
@@ -17,15 +20,16 @@
     </header>
     <div class="input-field" id="myForm">
         <form action="#" class="form-container" autocomplete="off">
-            <!-- <button class="remove-button">Close</button> -->
             <label for="bookname">Book name</label>
             <input type="text" name="book-name" id="bookname" placeholder="Romeo and Juliet" required>
             <label for="author">Book author</label>
             <input type="text" name="author" id="author" placeholder="William Shakespeare" required>
             <label for="pages">Number of pages</label>
             <input type="text" name="pages" id="pages" placeholder="480" required>
-            <label for="ifWasRead">Check if it was read</label>
-            <input type="checkbox" name="ifWasRead" id="ifWasRead">
+            <div class="check-holder">
+                <label for="ifWasRead">Check if it was read</label>
+                <input type="checkbox" name="ifWasRead" id="ifWasRead">
+            </div>
             <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
