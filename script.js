@@ -10,12 +10,13 @@ let myLibrary = [];
 document.querySelector(".add-button").addEventListener("click", displayInputField);
 document.querySelector("form").addEventListener("submit", addBookToLibrary);
 
-function autoBooks(){
+(function autoBooks(){
     let Shakespeare = new Book("Book: Romeo and Juliet", "By William Shakespeare", "Pages: 300", true);
     let Tolstoy = new Book("Book: War and Peace", "By Lev Tolstoy", "Pages: 1225", false);
     myLibrary.push(Shakespeare);
     myLibrary.push(Tolstoy);
-}
+    updateBooks();
+})();
 
 function addBookToLibrary(e){
     e.preventDefault();
@@ -127,5 +128,3 @@ function removeInputField(){
     document.getElementById("pages").value = "";
     document.getElementById("ifWasRead").checked = "";
 }
-autoBooks();
-updateBooks();
