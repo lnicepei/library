@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="title">
-            <h1>Library</h1>
+            <h1>dfg</h1>
         </div>
         <div class="add-button">
             <svg style="width:35px;height:35px" viewBox="0 0 24 24">
@@ -21,11 +21,11 @@
     <div class="input-field" id="myForm">
         <form action="#" class="form-container" autocomplete="off">
             <label for="bookname">Book name</label>
-            <input type="text" name="book-name" id="bookname" placeholder="Romeo and Juliet" required>
+            <input type="text" name="book-name" id="bookname" placeholder="Romeo and Juliet" required pattern="[a-zA-Z0-9]+">
             <label for="author">Book author</label>
-            <input type="text" name="author" id="author" placeholder="William Shakespeare" required>
+            <input type="text" name="author" id="author" placeholder="William Shakespeare" pattern="[a-zA-Z]+">
             <label for="pages">Number of pages</label>
-            <input type="number" name="pages" id="pages" placeholder="480" required>
+            <input type="number" name="pages" id="pages" placeholder="480" required pattern="[0-9]">
             <div class="check-holder">
                 <label for="ifWasRead">Check if it was read</label>
                 <input type="checkbox" name="ifWasRead" id="ifWasRead">
