@@ -1,18 +1,19 @@
-function Book(name, author, pageNumber, ifWasRead){
-    this.name = name;
-    this.author = author;
-    this.pageNumber = pageNumber;
-    this.ifWasRead = ifWasRead;
+class Book{
+    constructor(name, author, pageNumber, ifWasRead){
+        this.name = name;
+        this.author = author;
+        this.pageNumber = pageNumber;
+        this.ifWasRead = ifWasRead;
+    }
 }
 
 let myLibrary = [];
 
-document.querySelector(".add-button").addEventListener("click", displayInputField);
-document.querySelector("form").addEventListener("submit", addBookToLibrary);
-
 (function autoBooks(){
     let Shakespeare = new Book("Book: Romeo and Juliet", "By William Shakespeare", "Pages: 300", true);
     let Tolstoy = new Book("Book: War and Peace", "By Lev Tolstoy", "Pages: 1225", false);
+    document.querySelector(".add-button").addEventListener("click", displayInputField);
+    document.querySelector("form").addEventListener("submit", addBookToLibrary);
     myLibrary.push(Shakespeare);
     myLibrary.push(Tolstoy);
     updateBooks();
